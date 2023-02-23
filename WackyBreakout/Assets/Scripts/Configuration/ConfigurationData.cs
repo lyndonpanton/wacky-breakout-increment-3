@@ -19,6 +19,7 @@ public class ConfigurationData
     float ballLifeSeconds = 10;
     float minSpawnSeconds = 5;
     float maxSpawnSeconds = 10;
+    int numberOfBalls = 0;
 
     #endregion
 
@@ -69,6 +70,17 @@ public class ConfigurationData
         get { return maxSpawnSeconds; }
     }
 
+    /// <summary>
+    /// Gets the number of balls
+    /// </summary>
+    public int NumberOfBalls
+    {
+        get
+        {
+            return numberOfBalls;
+        }
+    }
+
     #endregion
 
     #region Constructor
@@ -117,6 +129,7 @@ public class ConfigurationData
         ballLifeSeconds = float.Parse(keys[2]);
         minSpawnSeconds = float.Parse(keys[3]);
         maxSpawnSeconds = float.Parse(keys[4]);
+        numberOfBalls = int.Parse(keys[5]);
     }
 
     #endregion

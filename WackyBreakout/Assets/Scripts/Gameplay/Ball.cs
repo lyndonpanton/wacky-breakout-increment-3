@@ -61,6 +61,7 @@ public class Ball : MonoBehaviour
     /// </summary>
     void OnBecameInvisible()
     {
+        HUD.lostBall();
         // death timer destruction is in Update
         if (!deathTimer.Finished)
         {
@@ -89,6 +90,11 @@ public class Ball : MonoBehaviour
         Rigidbody2D rb2d = GetComponent<Rigidbody2D>();
         float speed = rb2d.velocity.magnitude;
         rb2d.velocity = direction * speed;
+    }
+
+    public static void lostBall()
+    {
+
     }
 
     #endregion

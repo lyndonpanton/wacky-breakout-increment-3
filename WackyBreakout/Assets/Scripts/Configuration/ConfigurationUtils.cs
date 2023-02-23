@@ -59,6 +59,17 @@ public static class ConfigurationUtils
         get { return configurationData.MaxSpawnSeconds; }
     }
 
+    /// <summary>
+    /// Gets the number of balls remaining
+    /// </summary>
+    public static int NumberOfBalls
+    {
+        get
+        {
+            return configurationData.NumberOfBalls;
+        }
+    }
+
     #endregion
 
     /// <summary>
