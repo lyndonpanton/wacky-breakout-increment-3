@@ -61,7 +61,7 @@ public class Ball : MonoBehaviour
     /// </summary>
     void OnBecameInvisible()
     {
-        HUD.lostBall();
+        HUD.LostBall();
         // death timer destruction is in Update
         if (!deathTimer.Finished)
         {

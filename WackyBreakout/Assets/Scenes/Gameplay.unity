@@ -772,3 +772,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballsLeftText: {fileID: 543764374}
+  scoreText: {fileID: 870402037}

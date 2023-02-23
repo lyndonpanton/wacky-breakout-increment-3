@@ -7,6 +7,12 @@ using UnityEngine;
 /// </summary>	
 public class Block : MonoBehaviour
 {
+    #region Fields
+    private int pointsWorth  = 10;
+
+    #endregion
+
+
     #region Unity methods
 
     /// <summary>
@@ -36,6 +42,34 @@ public class Block : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnDestroy()
+    {
+        HUD.AddScore();
+    }
+
+    #endregion
+
+
+    #region Public methods
+
+
+    #endregion
+
+
+    #region Protected methods
+    protected int PointsWorth
+    {
+        set
+        {
+            pointsWorth = value;
+        }
+    }
+
+    #endregion
+
+
+    #region Private methods
 
     #endregion
 }

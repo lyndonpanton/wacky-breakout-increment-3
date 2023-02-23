@@ -19,7 +19,8 @@ public class ConfigurationData
     float ballLifeSeconds = 10;
     float minSpawnSeconds = 5;
     float maxSpawnSeconds = 10;
-    int numberOfBalls = 0;
+    int numberOfBalls = 25;
+    int standardBlockPoints = 15;
 
     #endregion
 
@@ -81,6 +82,17 @@ public class ConfigurationData
         }
     }
 
+    /// <summary>
+    /// Get the amount of points destroying a block is worth
+    /// </summary>
+    public int StandardBlockPoints
+    {
+        get
+        {
+            return standardBlockPoints;
+        }
+    }
+
     #endregion
 
     #region Constructor
@@ -130,6 +142,7 @@ public class ConfigurationData
         minSpawnSeconds = float.Parse(keys[3]);
         maxSpawnSeconds = float.Parse(keys[4]);
         numberOfBalls = int.Parse(keys[5]);
+        standardBlockPoints = int.Parse(keys[6]);
     }
 
     #endregion

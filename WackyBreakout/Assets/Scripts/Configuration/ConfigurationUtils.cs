@@ -70,6 +70,17 @@ public static class ConfigurationUtils
         }
     }
 
+    /// <summary>
+    /// Get the amount of points destroying a block is worth
+    /// </summary>
+    public static int StandardBlockPoints
+    {
+        get
+        {
+            return configurationData.StandardBlockPoints;
+        }
+    }
+
     #endregion
 
     /// <summary>
