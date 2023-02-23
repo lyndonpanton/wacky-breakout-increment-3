@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -79,7 +81,42 @@ public class ConfigurationData
     /// </summary>
     public ConfigurationData()
     {
-        
+        StreamReader input = null;
+
+        try
+        {
+            input = File.OpenText(Path.Combine(
+                Application.streamingAssetsPath, ConfigurationDataFileName
+            ));
+
+            string keys = input.ReadLine();
+            string values = input.ReadLine();
+
+            SetConfigurationDataKeys(values);
+        } catch (Exception e)
+        {
+            Console.Error.WriteLine(e);
+        } finally
+        {
+            if (input != null)
+            {
+                input.Close();
+            }
+        }
+    }
+
+    #endregion
+
+    #region Methods
+    public void SetConfigurationDataKeys(string csvKeys)
+    {
+        string[] keys = csvKeys.Split(',');
+
+        paddleMoveUnitsPerSecond = float.Parse(keys[0]);
+        ballImpulseForce = float.Parse(keys[1]);
+        ballLifeSeconds = float.Parse(keys[2]);
+        minSpawnSeconds = float.Parse(keys[3]);
+        maxSpawnSeconds = float.Parse(keys[4]);
     }
 
     #endregion
